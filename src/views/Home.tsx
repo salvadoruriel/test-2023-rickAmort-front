@@ -2,9 +2,26 @@ import React from 'react';
 import { Stack, Typography } from '@mui/material';
 
 import Loader from '../components/Loader';
+import { t_Character, t_response } from '../types/api_types';
+import rickAPI from '../api/axiosConfig';
 
-export default function Welcome() {
+export default function Home() {
 	const [isLoading, setIsLoading] = React.useState<boolean>(false);
+	const [chars, setChars] = React.useState<t_Character[]>();
+
+	React.useEffect(() => {
+		setIsLoading(true);
+		rickAPI
+			.get('character')
+			.then((res: t_response) => {
+				setChars(res.results as t_Character[]);
+				console.log(res);
+			})
+			.catch((err) => {
+				console.error('[Home] error on getting characters:', err);
+			})
+			.finally(() => setIsLoading(false));
+	}, []);
 
 	return (
 		<Stack component="main" sx={{ alignItems: 'center' }}>
@@ -23,6 +40,7 @@ export default function Welcome() {
 				</Typography>
 			</Stack>
 
+			{/* Character carousel */}
 		</Stack>
 	);
 }
