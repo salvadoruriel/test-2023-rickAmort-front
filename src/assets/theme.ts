@@ -7,6 +7,12 @@ export const darkTheme = responsiveFontSizes(
 		},
 		typography: {
 			fontSize: 18,
+			h1: {
+				fontWeight: 700,
+			},
+			h2: {
+				fontWeight: 700,
+			},
 		},
 		components: {
 			MuiTypography: {
@@ -14,9 +20,9 @@ export const darkTheme = responsiveFontSizes(
 					root: {
 						'& > span': {
 							color: 'rgb(175, 165, 155)',
-						}
-					}
-				}
+						},
+					},
+				},
 			},
 		},
 	})
