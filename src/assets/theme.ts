@@ -5,5 +5,19 @@ export const darkTheme = responsiveFontSizes(
 		palette: {
 			mode: 'dark',
 		},
+		typography: {
+			fontSize: 18,
+		},
+		components: {
+			MuiTypography: {
+				styleOverrides: {
+					root: {
+						'& > span': {
+							color: 'rgb(175, 165, 155)',
+						}
+					}
+				}
+			},
+		},
 	})
 );
