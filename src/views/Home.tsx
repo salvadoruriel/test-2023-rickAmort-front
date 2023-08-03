@@ -4,6 +4,7 @@ import { Stack, Typography } from '@mui/material';
 import Loader from '../components/Loader';
 import { t_Character, t_response } from '../types/api_types';
 import rickAPI from '../api/axiosConfig';
+import Carousel from '../components/Carousel';
 
 export default function Home() {
 	const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -41,6 +42,7 @@ export default function Home() {
 			</Stack>
 
 			{/* Character carousel */}
+			<Carousel chars={chars} />
 		</Stack>
 	);
 }
