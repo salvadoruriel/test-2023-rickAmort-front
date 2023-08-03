@@ -22,6 +22,12 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+
+    /* extras*/
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types/",
+    ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
