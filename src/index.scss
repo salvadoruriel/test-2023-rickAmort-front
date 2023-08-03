@@ -4,3 +4,23 @@ body {
   height: 100%;
   margin: 0px;
 }
+
+//ScrollBar configuration
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.5rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+//HANDLE or thumb (the moving bar)
+::-webkit-scrollbar-thumb {
+  //border-radius: 8px; //There isn't a border actually
+  background-color: rgba(255, 255, 255, 0.8);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(204, 204, 204);
+}
+//Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 255, 255, 0.8) rgba(0, 0, 0, 0);
+}
