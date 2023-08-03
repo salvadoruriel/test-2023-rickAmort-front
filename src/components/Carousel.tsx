@@ -24,7 +24,7 @@ export default function Carousel(props: t_Carousel) {
 			childWidth = (carouselRef.current.firstChild as HTMLElement).offsetWidth + gap;
 			//carouselRef.current.scrollLeft = childWidth * chars.length;
 		}
-		if (!childWidth) return;
+		if(childWidth - gap <= 0) return;
 
 		let isHovering = false;
 		const onMouseEnter = () => {
