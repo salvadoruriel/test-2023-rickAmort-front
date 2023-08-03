@@ -48,13 +48,21 @@ export default function Home() {
 	}, [searchVal]);
 
 	return (
-		<Stack component="main" sx={{ alignItems: 'center', width: '100%', height: '100%' }}>
+		<Stack
+			component="main"
+			sx={{ alignItems: 'center', width: '100%', height: '100%', overflow: 'auto' }}
+		>
 			{isLoading && <Loader />}
 			{/* About the page */}
 			<Stack
 				component="section"
 				aria-label="About this page"
-				sx={{ gap: '40px', p: '20px', pt: '130px', alignItems: 'center' }}
+				sx={{
+					gap: '40px',
+					p: '20px',
+					pt: '130px',
+					alignItems: 'center',
+				}}
 			>
 				<Typography variant="h2" component={'h1'} sx={{ textAlign: 'center' }}>
 					{'Rick & Morty searcher'}
@@ -65,7 +73,7 @@ export default function Home() {
 			</Stack>
 
 			{/* Character carousel */}
-			<Carousel chars={chars} sx={{ mt: '50px' }} />
+			<Carousel chars={chars} sx={{ mt: '50px', minHeight: '250px' }} />
 
 			{/* Character searcher */}
 			<Stack
@@ -73,6 +81,7 @@ export default function Home() {
 				aria-label="Character searcher"
 				sx={{
 					width: '100%',
+					minHeight: '600px',
 					flex: 1,
 					background: 'rgb(19, 20, 29)',
 					alignItems: 'center',
