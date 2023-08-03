@@ -38,7 +38,7 @@ export default function Carousel(props: t_Carousel) {
 		const interval = setInterval(() => {
 			const parent = carouselRef.current;
 			if (parent && !isHovering) {
-				parent.scrollLeft += 4; //current scroll speed
+				parent.scrollLeft += 4; //scroll speed
 
 				// if we reached the furthest scroll to the right
 				if (parent.scrollLeft === parent.scrollWidth - parent.offsetWidth) {
@@ -58,6 +58,7 @@ export default function Carousel(props: t_Carousel) {
 				if (!parent.scrollLeft) {
 					parent.insertBefore(parent.lastChild as Node, parent.firstChild);
 					parent.scrollLeft += childWidth;
+					console.warn(`moving backwards, which shouldn't be possible with current implementation!`)
 				}
 			}
 		}, 16);
