@@ -1,7 +1,8 @@
 {
   "name": "test-2023-rickamort-front",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "homepage": "https://salvadoruriel.github.io/test-2023-rickAmort-front",
   "type": "module",
   "scripts": {
     "start": "vite --open",
