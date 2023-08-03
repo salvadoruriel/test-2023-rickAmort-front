@@ -44,7 +44,14 @@ export default function Carousel(props: t_Carousel) {
 				if (parent.scrollLeft === parent.scrollWidth - parent.offsetWidth) {
 					parent.appendChild(parent.firstChild as Node);
 					parent.scrollLeft -= childWidth;
-					//console.log('moving Left!', childWidth);
+					console.log(
+						'moving Left!',
+						childWidth,
+						' parent vals: ',
+						parent.scrollWidth,
+						parent.offsetWidth,
+						parent.scrollLeft
+					);
 				}
 
 				//going backwards (& reached 0)

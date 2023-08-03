@@ -43,6 +43,8 @@ export default function Home() {
 
 			{/* Character carousel */}
 			<Carousel chars={chars} sx={{ mt: '50px' }} />
+
+			{/* Character searcher */}
 		</Stack>
 	);
 }
