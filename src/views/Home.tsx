@@ -42,7 +42,7 @@ export default function Home() {
 			</Stack>
 
 			{/* Character carousel */}
-			<Carousel chars={chars} />
+			<Carousel chars={chars} sx={{ mt: '50px' }} />
 		</Stack>
 	);
 }

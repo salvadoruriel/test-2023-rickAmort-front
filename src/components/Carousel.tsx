@@ -1,14 +1,15 @@
 import React from 'react';
 import { t_Character } from '../types/api_types';
-import { Stack } from '@mui/material';
+import { Stack, SxProps } from '@mui/material';
 import CharAvatar from './CharAvatar';
 
 export type t_Carousel = {
 	chars?: t_Character[];
+	sx?: SxProps;
 };
 /**fullWidth carousel to display the chars of each character */
 export default function Carousel(props: t_Carousel) {
-	const { chars = [] } = props;
+	const { chars = [], sx } = props;
 	const carouselRef = React.useRef<HTMLDivElement>(null);
 	const gap = 20;
 
@@ -95,6 +96,7 @@ export default function Carousel(props: t_Carousel) {
 						to: { transform: `translateX(-${100 * chars.length}%)` },
 					},
 				}, */
+				...sx,
 			}}
 		>
 			{chars.map((val, idx) => (
