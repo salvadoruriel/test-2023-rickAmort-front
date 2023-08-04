@@ -19,6 +19,7 @@ export default function Carousel(props: t_Carousel) {
 	//	although it could be possible to handle all this in CSS
 	//	but keeping the initial order became trickier than expected :P
 	React.useEffect(() => {
+		console.log('Carousel started!');
 		let childWidth = 0;
 		if (carouselRef.current && carouselRef.current.firstChild) {
 			childWidth = (carouselRef.current.firstChild as HTMLElement).offsetWidth + gap;
@@ -28,9 +29,11 @@ export default function Carousel(props: t_Carousel) {
 
 		let isHovering = false;
 		const onMouseEnter = () => {
+			console.log('onMouseEnter')
 			isHovering = true;
 		};
 		const onMouseLeave = () => {
+			console.log('onMouseLeave')
 			isHovering = false;
 		};
 
